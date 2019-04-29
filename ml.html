@@ -151,6 +151,37 @@ function initialize()
 					markerRoot1.add(mesh0);
 				}, onProgress, onError );
 		});
+
+		markerRoot2 = new THREE.Group();
+		scene.add(markerRoot2);
+		let markerControls2 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot2, {
+		type: 'pattern', patternUrl: "data/ar.patt",
+	})
+
+	let geometry2 = new THREE.PlaneBufferGeometry(1,1, 4,4);
+	let material2 = new THREE.MeshBasicMaterial( { color: 0x0000ff, opacity: 0.5 } );
+	mesh2 = new THREE.Mesh( geometry2, material2 );
+	mesh2.rotation.x = -Math.PI/2;
+	markerRoot2.add( mesh2 );
+	
+	function onProgress(xhr) { console.log( (xhr.loaded / xhr.total * 100) + '% loaded' ); }
+	function onError(xhr) { console.log( 'An error happened' ); }
+	
+	new THREE.MTLLoader()
+		.setPath( 'models/' )
+		.load( 'ServerV2+console.mtl', function ( materials ) {
+			materials.preload();
+			new THREE.OBJLoader()
+				.setMaterials( materials )
+				.setPath( 'models/' )
+				.load( 'ailaptopweb.obj', function ( group ) {
+					mesh0 = group.children[0];
+					mesh0.material.side = THREE.DoubleSide;
+					mesh0.position.y = 0.25;
+					mesh0.scale.set(0.25,0.25,0.25);
+					markerRoot1.add(mesh0);
+				}, onProgress, onError );
+		});
 }
 
 
