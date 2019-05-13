@@ -106,40 +106,32 @@ function initialize()
 	////////////////////////////////////////////////////////////
 	// setup markerRoots
 	////////////////////////////////////////////////////////////
-    var textures = [];
-	var markerRoots = [];
-	var scenes = [];
-	var markerControls = [];
-	var geometries = [];
-	var loaders = [];
-	var materials = [];
-	var meshes = [];
 	let patternArray = ["a01", "b01", "c01"];
 	let imageArray = ["a01", "a02", "a03"];
-
+/*
 	for (let i = 0; i < patternArray.length; i++)
 	{
 		markerRoots = new THREE.Group();
 		scene.add(markerRoots);
-		markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoots, {
+		let markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoots, {
 			type : 'pattern', patternUrl : "data/" + patternArray[i] + ".patt",
 		});
 	
-		geometry = new THREE.PlaneBufferGeometry(1,1, 4,4);
-		loaders = new THREE.TextureLoader();
-		texture = loaders.load( 'images/' + imageArray[i] + '.png', render );
-	    material = new THREE.MeshBasicMaterial( { map: texture } );
+		let geometry = new THREE.PlaneBufferGeometry(1,1, 4,4);
+		let loader = new THREE.TextureLoader();
+		let texture = loader.load( 'images/' + imageArray[i] + '.png', render );
+	    let material = new THREE.MeshBasicMaterial( { map: texture } );
 
 		mesh = new THREE.Mesh( geometry, material );
 		mesh.rotation.x = -Math.PI/2;
 	
 		markerRoots.add( mesh );
-	}
-/*
+	}*/
+
 	markerRoot4 = new THREE.Group();
 	scene.add(markerRoot4);
 	let markerControls4 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot4, {
-		type: 'pattern', patternUrl: "data/b01.patt",
+		type: 'pattern', patternUrl: "data/a01.patt",
 	})
 	let geometry4 = new THREE.PlaneBufferGeometry(1,1, 4,4);
 	let loader4 = new THREE.TextureLoader();
@@ -152,7 +144,7 @@ function initialize()
 	markerRoot5 = new THREE.Group();
 	scene.add(markerRoot5);
 	let markerControls5 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot5, {
-		type: 'pattern', patternUrl: "data/c01.patt",
+		type: 'pattern', patternUrl: "data/b01.patt",
 	})
 	let geometry5 = new THREE.PlaneBufferGeometry(1,1, 4,4);
 	let loader5 = new THREE.TextureLoader();
@@ -162,7 +154,7 @@ function initialize()
 	mesh5 = new THREE.Mesh( geometry5, material5 );
 	mesh5.rotation.x = -Math.PI/2;
 	
-	markerRoot5.add( mesh5 );*/
+	markerRoot5.add( mesh5 );
 
 }
 
