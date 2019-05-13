@@ -93,10 +93,10 @@ function initialize()
     //var height = 2 * Math.tan( vFOV / 2 ) * dist; // visible height
 		//var dist = 500 / ( 2 * Math.tan( camera.fov * Math.PI / 360 ) );
 		//camera.position.set( 0, 0, 250 + dist );
-    if(camera.position.z == -2)
+    if(camera.position.z == -6)
         camera.position.z = 0;
     else
-    camera.position.z = -2;
+    camera.position.z = -6;
     });
 	
 	////////////////////////////////////////////////////////////
@@ -150,7 +150,7 @@ function initialize()
 	markerRoot2 = new THREE.Group();
 	scene.add(markerRoot2);
 	let markerControls2 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot2, {
-		type: 'pattern', patternUrl: "data/ar.patt",
+		type: 'pattern', patternUrl: "data/b01.patt",
 	})
 
 	let geometry2 = new THREE.PlaneBufferGeometry(1,1, 6,6);
@@ -168,7 +168,7 @@ function initialize()
     markerRoot3 = new THREE.Group();
 	scene.add(markerRoot3);
 	let markerControls3 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot3, {
-		type: 'pattern', patternUrl: "data/dw.patt",
+		type: 'pattern', patternUrl: "data/c01.patt",
 	})
 
 	let geometry3 = new THREE.PlaneBufferGeometry(1,1, 4,4);
