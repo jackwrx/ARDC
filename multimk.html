@@ -117,7 +117,7 @@ function initialize()
 	var counter = 0;
 	let patternArray = ["a01", "a02", "a03", "a04", "a05", "a06", "a07"];
 	let colorArray   = [0xff0000, 0xff8800, 0xffff00, 0x00cc00, 0x0000ff, 0xcc00ff, 0xcccccc];
-	for (let i = 0; i < 1; i++)
+	for (let i = 0; i < 2; i++)
 	{
 		counter++;
 		markerRoots[i] = new THREE.Group();
@@ -135,6 +135,8 @@ function initialize()
 		meshes[i].rotation.x = -Math.PI/2;
 	
 		markerRoots[i].add( meshes[i] );
+		console.log("counter:",counter);
+		console.log("i:",i);
 	}
 	markerRoot4 = new THREE.Group();
 	scene.add(markerRoot4);
