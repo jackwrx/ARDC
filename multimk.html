@@ -132,12 +132,12 @@ function initialize()
 	markerRoot4 = new THREE.Group();
 	scene.add(markerRoot4);
 	let markerControls4 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot4, {
-		type: 'pattern', patternUrl: "data/a03.patt",
+		type: 'pattern', patternUrl: "data/b01.patt",
 	})
 
 	let geometry4 = new THREE.PlaneBufferGeometry(1,1, 4,4);
 	let loader4 = new THREE.TextureLoader();
-	let texture4 = loader4.load( 'images/a03.png', render );
+	let texture4 = loader4.load( 'images/honeycomb.png', render );
 	let material4 = new THREE.MeshBasicMaterial( { map: texture4 } );
 
 	mesh4 = new THREE.Mesh( geometry4, material4 );
