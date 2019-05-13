@@ -116,25 +116,25 @@ function initialize()
 	var meshes = [];
 	var counter = 0;
 	let patternArray = ["a01", "a02", "a03", "a04", "a05", "a06", "a07"];
-	let colorArray   = [0xff0000, 0xff8800, 0xffff00, 0x00cc00, 0x0000ff, 0xcc00ff, 0xcccccc];
+
 	for (let i = 0; i < 2; i++)
 	{
 		counter++;
-		markerRoots[i] = new THREE.Group();
-		scene.add(markerRoots[i]);
-		markerControls[i] = new THREEx.ArMarkerControls(arToolkitContext, markerRoots[i], {
+		markerRoots = new THREE.Group();
+		scene.add(markerRoots);
+		markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoots, {
 			type : 'pattern', patternUrl : "data/" + "a0" + counter + ".patt",
 		});
 	
-		geometries[i] = new THREE.PlaneBufferGeometry(1,1, 4,4);
-		loaders[i] = new THREE.TextureLoader();
-		textures[i] = loaders[i].load( 'images/a0'+counter+'.png', render );
-	    materials[i] = new THREE.MeshBasicMaterial( { map: textures[i] } );
+		geometry = new THREE.PlaneBufferGeometry(1,1, 4,4);
+		loaders = new THREE.TextureLoader();
+		texture = loaders.load( 'images/a0'+counter+'.png', render );
+	    material = new THREE.MeshBasicMaterial( { map: texture } );
 
-		meshes[i] = new THREE.Mesh( geometries[i], materials[i] );
-		meshes[i].rotation.x = -Math.PI/2;
+		mesh = new THREE.Mesh( geometry, material );
+		mesh.rotation.x = -Math.PI/2;
 	
-		markerRoots[i].add( meshes[i] );
+		markerRoots.add( mesh );
 	}
 
 	markerRoot4 = new THREE.Group();
