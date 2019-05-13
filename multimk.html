@@ -139,11 +139,11 @@ function initialize()
 	markerRoot4 = new THREE.Group();
 	scene.add(markerRoot4);
 	let markerControls4 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot4, {
-		type: 'pattern', patternUrl: "data/a01.patt",
+		type: 'pattern', patternUrl: "data/b01.patt",
 	})
 	let geometry4 = new THREE.PlaneBufferGeometry(1,1, 4,4);
 	let loader4 = new THREE.TextureLoader();
-	let texture4 = loader4.load( 'images/honeycomb.png', render );
+	let texture4 = loader4.load( 'images/a01.png', render );
 	let material4 = new THREE.MeshBasicMaterial( { map: texture4 } );
 	mesh4 = new THREE.Mesh( geometry4, material4 );
 	mesh4.rotation.x = -Math.PI/2;
@@ -152,12 +152,11 @@ function initialize()
 	markerRoot5 = new THREE.Group();
 	scene.add(markerRoot5);
 	let markerControls5 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot5, {
-		type: 'pattern', patternUrl: "data/a02.patt",
+		type: 'pattern', patternUrl: "data/c01.patt",
 	})
-
 	let geometry5 = new THREE.PlaneBufferGeometry(1,1, 4,4);
 	let loader5 = new THREE.TextureLoader();
-	let texture5 = loader4.load( 'images/honeycomb2.png', render );
+	let texture5 = loader4.load( 'images/a02.png', render );
 	let material5 = new THREE.MeshBasicMaterial( { map: texture5 } );
 
 	mesh5 = new THREE.Mesh( geometry5, material5 );
