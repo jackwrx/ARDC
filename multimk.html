@@ -114,21 +114,20 @@ function initialize()
 	var loaders = [];
 	var materials = [];
 	var meshes = [];
-	var counter = 0;
-	let patternArray = ["a01", "a02", "a03", "a04", "a05", "a06", "a07"];
+	let patternArray = ["a01", "a02", "a03"];
+	let imageArray = ["a01", "a02", "a03"];
 
-	for (let i = 0; i < 2; i++)
+	for (let i = 0; i < patternArray.length; i++)
 	{
-		counter++;
 		markerRoots = new THREE.Group();
 		scene.add(markerRoots);
 		markerControls = new THREEx.ArMarkerControls(arToolkitContext, markerRoots, {
-			type : 'pattern', patternUrl : "data/" + "a0" + counter + ".patt",
+			type : 'pattern', patternUrl : "data/" + patternArray[i] + ".patt",
 		});
 	
 		geometry = new THREE.PlaneBufferGeometry(1,1, 4,4);
 		loaders = new THREE.TextureLoader();
-		texture = loaders.load( 'images/a0'+counter+'.png', render );
+		texture = loaders.load( 'images/' + imageArray[i] + '.png', render );
 	    material = new THREE.MeshBasicMaterial( { map: texture } );
 
 		mesh = new THREE.Mesh( geometry, material );
