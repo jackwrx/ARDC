@@ -135,7 +135,7 @@ function initialize()
 	let geometry3 = new THREE.PlaneBufferGeometry(1,1, 4,4);
 	let loader3 = new THREE.TextureLoader();
 	let texture3 = loader3.load( 'images/kul01.png', render );
-	let material3 = new THREE.MeshBasicMaterial( { map: texture4 } );
+	let material3 = new THREE.MeshBasicMaterial( { map: texture3 } );
 	mesh3 = new THREE.Mesh( geometry3, material3 );
 	mesh3.rotation.x = -Math.PI/2;
 	markerRoot3.add( mesh3 );
