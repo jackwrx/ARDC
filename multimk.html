@@ -127,15 +127,27 @@ function initialize()
 	
 		markerRoots.add( mesh );
 	}*/
+	markerRoot3 = new THREE.Group();
+	scene.add(markerRoot3);
+	let markerControls4 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot4, {
+		type: 'pattern', patternUrl: "data/b01.patt",
+	})
+	let geometry3 = new THREE.PlaneBufferGeometry(1,1, 4,4);
+	let loader3 = new THREE.TextureLoader();
+	let texture3 = loader3.load( 'images/kul01.png', render );
+	let material3 = new THREE.MeshBasicMaterial( { map: texture4 } );
+	mesh3 = new THREE.Mesh( geometry3, material3 );
+	mesh3.rotation.x = -Math.PI/2;
+	markerRoot3.add( mesh3 );
 
 	markerRoot4 = new THREE.Group();
 	scene.add(markerRoot4);
 	let markerControls4 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot4, {
-		type: 'pattern', patternUrl: "data/b01.patt",
+		type: 'pattern', patternUrl: "data/b02.patt",
 	})
 	let geometry4 = new THREE.PlaneBufferGeometry(1,1, 4,4);
 	let loader4 = new THREE.TextureLoader();
-	let texture4 = loader4.load( 'images/a01.png', render );
+	let texture4 = loader4.load( 'images/kul02.png', render );
 	let material4 = new THREE.MeshBasicMaterial( { map: texture4 } );
 	mesh4 = new THREE.Mesh( geometry4, material4 );
 	mesh4.rotation.x = -Math.PI/2;
@@ -144,17 +156,32 @@ function initialize()
 	markerRoot5 = new THREE.Group();
 	scene.add(markerRoot5);
 	let markerControls5 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot5, {
-		type: 'pattern', patternUrl: "data/b02.patt",
+		type: 'pattern', patternUrl: "data/b03.patt",
 	})
 	let geometry5 = new THREE.PlaneBufferGeometry(1,1, 4,4);
 	let loader5 = new THREE.TextureLoader();
-	let texture5 = loader4.load( 'images/a02.png', render );
+	let texture5 = loader4.load( 'images/server1.png', render );
 	let material5 = new THREE.MeshBasicMaterial( { map: texture5 } );
 
 	mesh5 = new THREE.Mesh( geometry5, material5 );
 	mesh5.rotation.x = -Math.PI/2;
 	
 	markerRoot5.add( mesh5 );
+
+	markerRoot6 = new THREE.Group();
+	scene.add(markerRoot6);
+	let markerControls6 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot6, {
+		type: 'pattern', patternUrl: "data/b04.patt",
+	})
+	let geometry6 = new THREE.PlaneBufferGeometry(1,1, 4,4);
+	let loader6 = new THREE.TextureLoader();
+	let texture6 = loader6.load( 'images/server2.png', render );
+	let material6 = new THREE.MeshBasicMaterial( { map: texture6 } );
+
+	mesh6 = new THREE.Mesh( geometry6, material6 );
+	mesh6.rotation.x = -Math.PI/2;
+	
+	markerRoot6.add( mesh6 );
 
 }
 
