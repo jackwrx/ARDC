@@ -106,9 +106,9 @@ function initialize()
 	////////////////////////////////////////////////////////////
 	// setup markerRoots
 	////////////////////////////////////////////////////////////
-	let patternArray = ["a01", "b01", "c01"];
-	let imageArray = ["a01", "a02", "a03"];
-/*
+	let patternArray = ["A1", "B2", "C3"];
+	let imageArray = ["kul01", "server1", "server2"];
+
 	for (let i = 0; i < patternArray.length; i++)
 	{
 		markerRoots = new THREE.Group();
@@ -126,7 +126,8 @@ function initialize()
 		mesh.rotation.x = -Math.PI/2;
 	
 		markerRoots.add( mesh );
-	}*/
+	}
+	
 	markerRoot3 = new THREE.Group();
 	scene.add(markerRoot3);
 	let markerControls3 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot3, {
